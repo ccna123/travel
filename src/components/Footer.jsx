@@ -32,7 +32,13 @@ export const Footer = () => {
               aliquid placeat. Laborum corporis dolorum velit aspernatur,
               assumenda nihil et non neque.
             </p>
-            <div>social list</div>
+            <div className="flex gap-4 my-6">
+              <i class="fa-brands fa-facebook fa-lg"></i>
+              <i class="fa-brands fa-twitter fa-lg"></i>
+              <i class="fa-brands fa-instagram fa-lg"></i>
+              <i class="fa-brands fa-linkedin fa-lg"></i>
+              <i class="fa-brands fa-youtube fa-lg"></i>
+            </div>
           </div>
           <div>
             <h1 className="uppercase font-bold text-2xl">our agency</h1>

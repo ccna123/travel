@@ -16,7 +16,7 @@ export const StarRating = () => {
               onClick={() => setRating(ratingVal)}
             />
             <i
-              className={`fa-solid fa-star fa-xl ${
+              className={`fa-solid fa-star fa-xl transition-colors duration-150 ${
                 ratingVal <= (hover || rating) ? "text-yellow-300" : ""
               }`}
               onMouseEnter={() => setHover(ratingVal)}

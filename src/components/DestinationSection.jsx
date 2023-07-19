@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { DestinationCard } from "./DestinationCard";
 import destination from "../data/destination.json";
 import { TravelContext } from "../context/TravelContext";
+import { Booking } from "./Booking";
 
 export const DestinationSection = () => {
   const { filterDestination } = useContext(TravelContext);

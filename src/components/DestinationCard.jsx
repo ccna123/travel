@@ -1,5 +1,6 @@
 import React from "react";
 import { StarRating } from "./StarRating";
+import { Link } from "react-router-dom";
 
 export const DestinationCard = ({ place }) => {
   return (
@@ -32,12 +33,15 @@ export const DestinationCard = ({ place }) => {
             obcaecati illum laborum facilis excepturi molestias?
           </p>
         </div>
-        <div className=" hover:bg-black hover:text-white duration-150 bg-green-400 mt-4 w-fit px-4 py-2 rounded-2xl flex items-center gap-4 text-white">
+        <Link
+          to={`booking/${place.id}`}
+          className=" hover:bg-black hover:text-white duration-150 bg-green-400 mt-4 w-fit px-4 py-2 rounded-2xl flex items-center gap-4 text-white"
+        >
           <button type="button" className="font-bold">
-            Details
+            Book
           </button>
           <i className="fa-solid fa-folder"></i>
-        </div>
+        </Link>
       </div>
     </div>
   );

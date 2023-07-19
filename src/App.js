@@ -1,21 +1,21 @@
 import { Appbar } from "./components/Appbar";
-import { BackToTopBtn } from "./components/BackToTopBtn";
-import { DestinationSection } from "./components/DestinationSection";
-import { Footer } from "./components/Footer";
-import { Main } from "./components/Main";
 import { TravelProvider } from "./context/TravelContext";
-
+import { Booking } from './components/Booking';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Home } from "./Pages/Home";
 function App() {
   return (
-    <div className="App">
+    <div className="App flex flex-col h-[100vh] w-full">
       <Appbar />
       <div>
-        <TravelProvider>
-          <Main />
-          <DestinationSection />
-          <Footer />
-          <BackToTopBtn />
-        </TravelProvider>
+        <BrowserRouter>
+          <TravelProvider>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/booking/:id" element={<Booking />} />
+            </Routes>
+          </TravelProvider>
+        </BrowserRouter>
       </div>
     </div>
   );
