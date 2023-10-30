@@ -1,10 +1,12 @@
-import React from "react";
+import React, { memo } from "react";
 import { StarRating } from "./StarRating";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
-export const DestinationCard = ({ place }) => {
+function DestinationCard({ place }) {
+  const location = useLocation().pathname.split("/")[1];
+
   return (
-    <div className="rounded-xl shadow-xl hover:cursor-pointer hover:scale-105 duration-150">
+    <div className="rounded-xl shadow-xl hover:cursor-pointer">
       <div className="w-full h-96">
         <img src={place.img} className="rounded-t-xl w-full h-full" />
       </div>
@@ -33,16 +35,29 @@ export const DestinationCard = ({ place }) => {
             obcaecati illum laborum facilis excepturi molestias?
           </p>
         </div>
-        <Link
-          to={`booking/${place.id}`}
-          className=" hover:bg-black hover:text-white duration-150 bg-green-400 mt-4 w-fit px-4 py-2 rounded-2xl flex items-center gap-4 text-white"
-        >
-          <button type="button" className="font-bold">
-            Book
-          </button>
-          <i className="fa-solid fa-folder"></i>
-        </Link>
+        {location === "booking" ? (
+          <Link
+            to=""
+            className=" hover:bg-black hover:text-white duration-150 bg-green-400 mt-4 w-fit px-4 py-2 rounded-2xl flex items-center gap-4 text-white"
+          >
+            <button type="button" className="font-bold">
+              Go back
+            </button>
+          </Link>
+        ) : (
+          <Link
+            to={`booking/${place.id}`}
+            className=" hover:bg-black hover:text-white duration-150 bg-green-400 mt-4 w-fit px-4 py-2 rounded-2xl flex items-center gap-4 text-white"
+          >
+            <button type="button" className="font-bold">
+              Book
+            </button>
+            <i className="fa-solid fa-folder"></i>
+          </Link>
+        )}
       </div>
     </div>
   );
-};
+}
+
+export default memo(DestinationCard);

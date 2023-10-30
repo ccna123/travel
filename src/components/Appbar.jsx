@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Appbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -23,8 +24,7 @@ export const Appbar = () => {
     <div className="bg-white flex flex-col lg:flex-row lg:justify-between lg:items-center p-4">
       <div className="flex justify-between">
         <div className="flex items-center">
-          <img src="/imgs/logo.jpg" className="w-32 h-32 text-white" />
-          <h1 className="font-bold text-8xl text-black">Travel</h1>
+          <img src="/imgs/logo.jpg" className="w-16 h-16 text-white" />
         </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -48,9 +48,12 @@ export const Appbar = () => {
         }  left-0 z-10 top-14 w-fit md:ml-96`}
       >
         <ul className="flex md:flex-row flex-col gap-8 p-2 text-black font-bold">
-          <li className="text-2xl hover:cursor-pointer hover:bg-gray-400 hover:text-black p-2 rounded-lg duration-150">
+          <Link
+            to="/"
+            className="text-2xl hover:cursor-pointer hover:bg-gray-400 hover:text-black p-2 rounded-lg duration-150"
+          >
             Home
-          </li>
+          </Link>
           <li className="text-2xl hover:cursor-pointer hover:bg-gray-400 hover:text-black p-2 rounded-lg duration-150">
             Services
           </li>
