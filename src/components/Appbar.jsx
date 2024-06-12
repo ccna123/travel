@@ -24,7 +24,7 @@ export const Appbar = () => {
     <div className="bg-white flex flex-col lg:flex-row lg:justify-between lg:items-center p-4">
       <div className="flex justify-between">
         <div className="flex items-center">
-          <img src="/imgs/logo.jpg" className="w-16 h-16 text-white" />
+          <img src="/imgs/travel.png" className="w-16 h-16" />
         </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
