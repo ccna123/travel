@@ -24,7 +24,7 @@ export const Appbar = () => {
     <div className="bg-white flex flex-col lg:flex-row lg:justify-between lg:items-center p-4">
       <div className="flex justify-between">
         <div className="flex items-center">
-          <img src="/imgs/travel.png" className="w-16 h-16" />
+          <img src="/imgs/travel.png" className="w-16 h-16" alt="" />
         </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -43,9 +43,8 @@ export const Appbar = () => {
         </svg>
       </div>
       <nav
-        className={`${
-          isNavOpen ? "flex" : "hidden"
-        }  left-0 z-10 top-14 w-fit md:ml-96`}
+        className={`${isNavOpen ? "flex" : "hidden"
+          }  left-0 z-10 top-14 w-fit md:ml-96`}
       >
         <ul className="flex md:flex-row flex-col gap-8 p-2 text-black font-bold">
           <Link

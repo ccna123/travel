@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 export const StarRating = () => {
   const [rating, setRating] = useState(null);
@@ -16,9 +16,8 @@ export const StarRating = () => {
               onClick={() => setRating(ratingVal)}
             />
             <i
-              className={`fa-solid fa-star fa-xl transition-colors duration-150 ${
-                ratingVal <= (hover || rating) ? "text-yellow-300" : ""
-              }`}
+              className={`fa-solid fa-star fa-xl transition-colors duration-150 ${ratingVal <= (hover || rating) ? "text-yellow-300" : ""
+                }`}
               onMouseEnter={() => setHover(ratingVal)}
               onMouseLeave={() => setHover(null)}
             ></i>

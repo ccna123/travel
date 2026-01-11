@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import { memo } from "react";
 import { StarRating } from "./StarRating";
 import { Link, useLocation } from "react-router-dom";
 
@@ -8,7 +8,7 @@ function DestinationCard({ place }) {
   return (
     <div className="rounded-xl shadow-xl hover:cursor-pointer">
       <div className="w-full h-96">
-        <img src={place.img} className="rounded-t-xl w-full h-full" />
+        <img src={place.img} className="rounded-t-xl w-full h-full" alt="" />
       </div>
       <div className="p-5">
         <h1 className="font-bold text-xl">{place.name}</h1>

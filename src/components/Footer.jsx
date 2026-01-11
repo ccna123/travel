@@ -1,5 +1,3 @@
-import React from "react";
-
 export const Footer = () => {
   return (
     <div className="p-4 bg-gradient-to-r from-cyan-300 to-blue-200">

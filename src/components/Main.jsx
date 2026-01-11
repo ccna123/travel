@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import { useState, useContext, useEffect } from "react";
 import bgVideo from "../assets/bgVideo.mp4";
 import { TravelContext } from "../context/TravelContext";
 import travel from "../data/destination.json";

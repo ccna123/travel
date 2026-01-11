@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { TravelContext } from "../context/TravelContext";
 import DestinationCard from "./DestinationCard";
 

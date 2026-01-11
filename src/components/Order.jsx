@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Order = ({ place }) => {
   const [peolple, setPeolple] = useState(1);
