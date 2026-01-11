@@ -1,4 +1,4 @@
-const destinations = require("../data/destination.json");
+const destinations = require("../../src/data/destination.json");
 
 module.exports = async function (context, req) {
     context.res = {
