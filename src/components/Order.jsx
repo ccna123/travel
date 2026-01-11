@@ -7,25 +7,23 @@ export const Order = ({ place }) => {
   const [selectOption, setSelectOption] = useState("plane");
 
   const bookNow = async () => {
-    try {
-      const res = await fetch("/api/booking", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          destinationId: 123,
-          date: new Date().toISOString(),
-          price: 1200
-        })
-      });
+    const res = await fetch("/api/booking", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ destinationId: 123 })
+    });
 
+    if (res.status === 401) {
+      // user chưa login
+      alert("Please login before booking");
+      return;
+    } else if (res.ok) {
       const data = await res.json();
+      alert("Booking successful");
       console.log(data);
-    } catch (error) {
-      console.error(error);
     }
   };
+
 
   useEffect(() => {
     if (selectOption === "plane") {
