@@ -12,7 +12,7 @@ export const Order = ({ place }) => {
     } else {
       setTotal(place.price * peolple + numOfStay * 10 + 30);
     }
-  }, [peolple, numOfStay, selectOption]);
+  }, [peolple, numOfStay, selectOption, place.price]);
   return (
     <div className="bg-slate-200 rounded-xl shadow-xl p-4 flex flex-col gap-4">
       <div className="flex items-center justify-around">

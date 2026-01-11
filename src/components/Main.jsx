@@ -22,14 +22,14 @@ export const Main = () => {
     if (date === "") {
       setFilterDestination(travel);
     } else {
-      const [year, month, day] = date.split("-");
+      const [, month, day] = date.split("-");
       const newDate = `${parseInt(month)}月${parseInt(day)}日`;
       const filter = travel.filter((des) => {
         return des.departure.includes(newDate);
       });
       setFilterDestination(filter);
     }
-  }, [date]);
+  }, [date, setFilterDestination]);
 
   useEffect(() => {
     if (search === "") {
@@ -40,7 +40,7 @@ export const Main = () => {
       });
       setFilterDestination(filter);
     }
-  }, [search]);
+  }, [search, setFilterDestination]);
 
   const handleFilterPrice = () => {
     const min = parseInt(minPrice);
