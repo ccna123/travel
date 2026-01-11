@@ -44,7 +44,7 @@ export const Main = () => {
       });
       setFilterDestination(filter);
     }
-  }, [date, setFilterDestination]);
+  }, [date, setFilterDestination, destinations]);
 
   useEffect(() => {
     if (search === "") {
@@ -55,7 +55,7 @@ export const Main = () => {
       });
       setFilterDestination(filter);
     }
-  }, [search, setFilterDestination]);
+  }, [search, setFilterDestination, destinations]);
 
   const handleFilterPrice = () => {
     const min = parseInt(minPrice);
