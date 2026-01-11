@@ -19,7 +19,7 @@ export const Main = () => {
   };
 
   useEffect(() => {
-    fetch("/api/getDestinations")
+    fetch("/api/src/functions/getDestinations")
       .then((res) => {
         if (!res.ok) throw new Error("Failed to fetch destinations");
         return res.json();
