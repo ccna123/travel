@@ -3,7 +3,7 @@ const { app } = require('@azure/functions');
 const destinations = require("../../../src/data/destination.json");
 
 
-app.http('getDestination', {
+app.http('getDestinations', {
     methods: ['GET', 'POST'],
     authLevel: 'anonymous',
     handler: async (request, context) => {
