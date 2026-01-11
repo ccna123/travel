@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "name": "東京",
+    "spell": "tokyo",
+    "img": "/imgs/tokyo.jpg",
+    "departure": "1月20日",
+    "price": 700
+  },
+  {
+    "id": 2,
+    "name": "大阪",
+    "spell": "osaka",
+    "img": "/imgs/osaka.jpg",
+    "departure": "12月10日",
+    "price": 500
+  },
+  {
+    "id": 3,
+    "name": "名古屋",
+    "spell": "nagoya",
+    "img": "/imgs/nagoya.jpg",
+    "departure": "7月28日",
+    "price": 800
+  },
+  {
+    "id": 4,
+    "name": "横浜",
+    "spell": "yokohama",
+    "img": "/imgs/yokohama.jpg",
+    "departure": "3月3日",
+    "price": 250
+  },
+  {
+    "id": 5,
+    "name": "北海道",
+    "spell": "hokkaido",
+    "img": "/imgs/hokkaido.jpeg",
+    "departure": "10月20日",
+    "price": 900
+  },
+  {
+    "id": 6,
+    "name": "沖縄",
+    "spell": "okinawa",
+    "img": "/imgs/okinawa.jpg",
+    "departure": "7月14日",
+    "price": 1500
+  },
+  {
+    "id": 7,
+    "name": "奈良",
+    "spell": "nara",
+    "img": "/imgs/nara.jpg",
+    "departure": "8月31日",
+    "price": 190
+  },
+  {
+    "id": 8,
+    "name": "白川郷",
+    "spell": "shiragawa",
+    "img": "/imgs/shiragawa.jpg",
+    "departure": "7月14日",
+    "price": 405
+  },
+  {
+    "id": 9,
+    "name": "京都",
+    "spell": "kyoto",
+    "img": "/imgs/kyoto.jpg",
+    "departure": "2月14日",
+    "price": 320
+  },
+  {
+    "id": 10,
+    "name": "神戸",
+    "spell": "kobe",
+    "img": "/imgs/kobe.jpg",
+    "departure": "6月1日",
+    "price": 400
+  },
+  {
+    "id": 11,
+    "name": "札幌",
+    "spell": "sapporo",
+    "img": "/imgs/sapporo.jpg",
+    "departure": "10月12日",
+    "price": 1452
+  },
+  {
+    "id": 12,
+    "name": "福岡",
+    "spell": "fukuoka",
+    "img": "/imgs/fukuoka.jpg",
+    "departure": "1月1日",
+    "price": 1400
+  }
+]
