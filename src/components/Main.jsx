@@ -1,7 +1,6 @@
 import { useState, useContext, useEffect } from "react";
 import bgVideo from "../assets/bgVideo.mp4";
 import { TravelContext } from "../context/TravelContext";
-import travel from "../data/destination.json";
 
 export const Main = () => {
   const [minPrice, setMinPrice] = useState(0);
@@ -9,6 +8,7 @@ export const Main = () => {
   const [search, setSearch] = useState("");
   const [date, setDate] = useState("");
   const { setFilterDestination } = useContext(TravelContext);
+  const [destinations, setDestinations] = useState([]);
 
   const handleSearchDestination = (e) => {
     setSearch(e.target.value);
@@ -19,12 +19,27 @@ export const Main = () => {
   };
 
   useEffect(() => {
+    fetch("/api/getDestination")
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to fetch destinations");
+        return res.json();
+      })
+      .then((data) => {
+        setDestinations(data);
+        setFilterDestination(data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, [setFilterDestination]);
+
+  useEffect(() => {
     if (date === "") {
-      setFilterDestination(travel);
+      setFilterDestination(destinations);
     } else {
       const [, month, day] = date.split("-");
       const newDate = `${parseInt(month)}月${parseInt(day)}日`;
-      const filter = travel.filter((des) => {
+      const filter = destinations.filter((des) => {
         return des.departure.includes(newDate);
       });
       setFilterDestination(filter);
@@ -33,9 +48,9 @@ export const Main = () => {
 
   useEffect(() => {
     if (search === "") {
-      setFilterDestination(travel);
+      setFilterDestination(destinations);
     } else {
-      const filter = travel.filter((des) => {
+      const filter = destinations.filter((des) => {
         return des.spell.toLowerCase().includes(search.toLowerCase());
       });
       setFilterDestination(filter);
@@ -52,7 +67,7 @@ export const Main = () => {
         "the first price must not greater than the second price. Please enter again"
       );
     } else {
-      const filter = travel.filter((des) => {
+      const filter = destinations.filter((des) => {
         return des.price >= min && des.price <= max;
       });
       setFilterDestination(filter);
@@ -61,7 +76,7 @@ export const Main = () => {
   const handleClearPrice = () => {
     setMinPrice(0);
     setMaxPrice(0);
-    setFilterDestination(travel);
+    setFilterDestination(destinations);
   };
 
   return (
