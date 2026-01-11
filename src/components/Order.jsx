@@ -6,6 +6,27 @@ export const Order = ({ place }) => {
   const [total, setTotal] = useState(place.price);
   const [selectOption, setSelectOption] = useState("plane");
 
+  const bookNow = async () => {
+    try {
+      const res = await fetch("/api/booking", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          destinationId: 123,
+          date: new Date().toISOString(),
+          price: 1200
+        })
+      });
+
+      const data = await res.json();
+      console.log(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   useEffect(() => {
     if (selectOption === "plane") {
       setTotal(place.price * peolple + numOfStay * 10 + 100);
@@ -55,6 +76,7 @@ export const Order = ({ place }) => {
       </div>
       <button
         type="button"
+        onClick={bookNow}
         className="bg-red-500 font-bold p-2 rounded-xl text-white text-2xl hover:scale-105 duration-100 mx-4"
       >
         Check out

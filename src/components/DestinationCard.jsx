@@ -37,7 +37,7 @@ function DestinationCard({ place }) {
         </div>
         {location === "booking" ? (
           <Link
-            to=""
+            to="/"
             className=" hover:bg-black hover:text-white duration-150 bg-green-400 mt-4 w-fit px-4 py-2 rounded-2xl flex items-center gap-4 text-white"
           >
             <button type="button" className="font-bold">
