@@ -9,14 +9,14 @@ module.exports = async function (context, req) {
         }
 
         context.log("QUEUE_NAME:", process.env.QUEUE_NAME);
-        context.log("STORAGE:", !!process.env.AzureWebJobsStorage);
+        context.log("STORAGE:", !!process.env.STORAGE_CONNECTION_STRING);
 
         if (!process.env.QUEUE_NAME) {
             throw new Error("QUEUE_NAME is not defined");
         }
 
         const queueClient = new QueueClient(
-            process.env.AzureWebJobsStorage,
+            process.env.STORAGE_CONNECTION_STRING,
             process.env.QUEUE_NAME
         );
 
