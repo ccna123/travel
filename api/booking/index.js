@@ -34,7 +34,7 @@ module.exports = async function (context, req) {
         context.log.error("BOOKING ERROR:", err);
         context.res = {
             status: 500,
-            body: "Internal Server Error"
+            body: err.message || "Internal Server Error"
         };
     }
 };
