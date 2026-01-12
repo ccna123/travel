@@ -1,10 +1,6 @@
 {
     "routes": [
         {
-            "route": "/example",
-            "rewrite": "/example.html"
-        },
-        {
             "route": "/api/booking",
             "allowedRoles": [
                 "authenticated"
