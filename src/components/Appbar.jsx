@@ -2,27 +2,25 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export const Appbar = () => {
-
-  const [userInfo, setUserInfo] = useState(null)
+  const [userInfo, setUserInfo] = useState(null);
 
   useEffect(() => {
     (async () => {
-      setUserInfo(await fetchUserInfo())
-    })()
-  }, [])
-
+      setUserInfo(await fetchUserInfo());
+    })();
+  }, []);
 
   async function fetchUserInfo() {
     try {
-      const res = await fetch('/.auth/me');
+      const res = await fetch("/.auth/me");
       const payload = await res.json();
       const user = payload.clientPrincipal;
       console.log(user);
-      setUserInfo(user)
-      return user
+      setUserInfo(user);
+      return user;
     } catch (error) {
       console.error("No profile could be found");
-      return undefined
+      return undefined;
     }
   }
 
@@ -33,9 +31,7 @@ export const Appbar = () => {
           <img src="/imgs/travel.png" className="w-16 h-16" alt="" />
         </div>
       </div>
-      <nav
-        className={"flex justify-between z-10"}
-      >
+      <nav className={"flex justify-between z-10"}>
         <ul className="flex md:flex-row flex-col gap-8 p-2 text-black font-bold">
           <Link
             to="/"
@@ -71,7 +67,7 @@ export const Appbar = () => {
     px-10 rounded-lg h-12
   "
           >
-            {userInfo ? `Hello, ${userInfo.userDetails}` : 'Login'}
+            {userInfo ? `Hello, ${userInfo.userDetails}` : "Login"}
           </a>
           {userInfo && (
             <a
